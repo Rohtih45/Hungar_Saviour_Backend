@@ -1,8 +1,10 @@
 package com.hungar.saviour.portal.services.impl;
 
+import com.hungar.saviour.portal.dtos.RestaurantDTO;
 import com.hungar.saviour.portal.entities.RestaurantEntity;
 import com.hungar.saviour.portal.repository.RestaurantRepository;
 import com.hungar.saviour.portal.services.RestaurantService;
+import com.hungar.saviour.portal.utilities.RestaurantMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,7 +24,8 @@ public class RestaurantServiceImpl implements RestaurantService {
     }
 
     @Override
-    public List<RestaurantEntity> getRestaurant() {
-        return restaurantRepository.findAll();
+    public List<RestaurantDTO> getRestaurant() {
+        List<RestaurantEntity> entities = restaurantRepository.findAll();
+        return entities.stream().map(RestaurantMapper.INSTANCE::entityToDto).toList();
     }
 }

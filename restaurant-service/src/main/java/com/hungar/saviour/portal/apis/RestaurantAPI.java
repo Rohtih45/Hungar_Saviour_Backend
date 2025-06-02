@@ -2,6 +2,7 @@ package com.hungar.saviour.portal.apis;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hungar.saviour.portal.dtos.RestaurantDTO;
 import com.hungar.saviour.portal.entities.RestaurantEntity;
 import com.hungar.saviour.portal.repository.RestaurantRepository;
 import com.hungar.saviour.portal.services.RestaurantService;
@@ -33,7 +34,7 @@ public class RestaurantAPI {
     }
 
     @GetMapping("/loadRest")
-    public List<RestaurantEntity> getRestaurants(){
+    public List<RestaurantDTO> getRestaurants(){
         return this.service.getRestaurant();
     }
 
