@@ -51,4 +51,9 @@ public class RestaurantAPI {
 
         return "Records Inserted";
     }
+
+    @GetMapping("/{restaurantId}")
+    public RestaurantDTO getRestaurantById(@PathVariable Integer restaurantId) throws Exception {
+        return service.getRestaurantById(restaurantId);
+    }
 }

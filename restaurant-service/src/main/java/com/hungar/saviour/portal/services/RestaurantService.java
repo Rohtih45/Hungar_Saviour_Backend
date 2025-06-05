@@ -10,4 +10,6 @@ public interface RestaurantService {
     Page<RestaurantEntity> getRestaurants(int pageNumber, int pageSize);
 
     List<RestaurantDTO> getRestaurant();
+
+    public RestaurantDTO getRestaurantById(Integer id) throws Exception;
 }
