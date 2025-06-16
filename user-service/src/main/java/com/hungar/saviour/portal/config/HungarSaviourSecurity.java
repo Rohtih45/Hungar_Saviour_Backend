@@ -56,7 +56,7 @@ public class HungarSaviourSecurity {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/users/login", "/users/signup", "/users/validate",
+                    auth.requestMatchers("/users/login", "/users/signin", "/users/validate",
                             "/swagger-ui.html", "/v3/api-docs/**", "/v3/api-docs.yaml",
                             "/swagger-ui/**","/swagger-ui/index.html").permitAll();
                     auth.anyRequest().authenticated();

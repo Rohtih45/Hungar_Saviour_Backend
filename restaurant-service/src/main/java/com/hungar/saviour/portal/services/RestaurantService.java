@@ -7,7 +7,10 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface RestaurantService {
-    Page<RestaurantEntity> getRestaurants(int pageNumber, int pageSize);
+
+    RestaurantDTO createRestaurant(RestaurantDTO dto);
+
+    Page<RestaurantDTO> getRestaurants(int pageNumber, int pageSize);
 
     List<RestaurantDTO> getRestaurant();
 

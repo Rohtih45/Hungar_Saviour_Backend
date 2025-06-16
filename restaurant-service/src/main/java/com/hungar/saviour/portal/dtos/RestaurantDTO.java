@@ -19,5 +19,5 @@ public class RestaurantDTO {
     private String imageUrl;
     private String location;
     private List<String> menuTypes;
-    private List<RestaurantMenuEntity> menus;
+    private List<RestaurantMenuDTO> menus;
 }

@@ -29,7 +29,7 @@ public class RestaurantAPI {
     private final RestaurantService service;
 
     @GetMapping("/{pageNumber}/{pageSize}")
-    public Page<RestaurantEntity> getRestaurants(@PathVariable Integer pageNumber,@PathVariable Integer pageSize){
+    public Page<RestaurantDTO> getRestaurants(@PathVariable Integer pageNumber,@PathVariable Integer pageSize){
         return this.service.getRestaurants(pageNumber, pageSize);
     }
 

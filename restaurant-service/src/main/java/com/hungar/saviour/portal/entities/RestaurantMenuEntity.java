@@ -27,6 +27,6 @@ public class RestaurantMenuEntity {
     @Column(name = "menu_type")
     private String menuType;
     @Column(name = "price")
-    private Double price;
+    private Double menuItemPrice;
 
 }
